@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -x
 source "$(dirname "$0")/common.sh"
 
 if [[ -z "${SONAR_TOKEN}" ]]; then
