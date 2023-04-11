@@ -38,7 +38,7 @@ status="$(jq -r '.task.status' <<< "$task")"
 
 until [[ ${status} != "PENDING" && ${status} != "IN_PROGRESS" ]]; do
     printf '.'
-    sleep 5s
+    sleep 20s
     task="$(curl --location --location-trusted --max-redirs 10 --silent --fail --show-error --user "${SONAR_TOKEN}": "${ceTaskUrl}")"
     status="$(jq -r '.task.status' <<< "$task")"
 done
